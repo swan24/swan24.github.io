@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown button:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the clothes dropdown menu.</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Clothes</button>
+  <div id="myDropdown" class="dropdown-content">
+    <button onclick="showshirts()">Shirts</button>
+    <button onclick="showpants()">Pants</button>
+    <button onclick="showhats()">Hats</button>
+    <button onclick="showshoes()">Shoes</button>
+
+  </div>
+</div>
+
+<div style="border: 5px solid red; width:200px; height:400px; display:none;"  id="shirtDiv">
+  <img src="http://images.footballfanatics.com/FFImage/thumb.aspx?i=/productImages/_2395000/ff_2395437c_full.jpg&w=340" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="http://d27ah0i12nj2vl.cloudfront.net/media/catalog/product/cache/1/small_image/300x/9df78eab33525d08d6e5fb8d27136e95/8/9/891.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+
+</div>
+
+<div style="border: 5px solid green; width:200px; height:400px; display:none;"  id="pantDiv">
+  <img src="http://www.patagonia.com/dis/dw/image/v2/ABBM_PRD/on/demandware.static/-/Sites-patagonia-master/default/dwb85953a7/images/hi-res/21970_FGE.jpg?sw=750&sh=750&sm=fit&sfrm=png" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="http://assets.academy.com/mgen/06/10426106.jpg?is=500,500" alt="W3Schools.com" style="width:50px;height:50px;">
+</div>
+
+<div style="border: 5px solid blue; width:200px; height:400px; display:none;"  id="hatDiv">
+  <img src="http://www.villagehatshop.com/photos/product/standard/4511390S171094/all/panama-straw-c-crown-fedora-hat.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_2659000/ff_2659871_full.jpg&w=340" alt="W3Schools.com" style="width:50px;height:50px;">
+
+</div>
+
+<div style="border: 5px solid brown; width:200px; height:400px; display:none;"  id="shoeDiv">
+  <img src="https://s-media-cache-ak0.pinimg.com/originals/ba/ed/d0/baedd02edbbc575faed961eab41772d0.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="https://s-media-cache-ak0.pinimg.com/736x/4a/fe/ab/4afeab7df54559de77d45a8fcde7841a--shoes-jordans-sneakers-shoes.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+
+      }
+    }
+  }
+}
+
+function showshirts() {
+  document.getElementById("shirtDiv").style.display="block";
+  document.getElementById("hatDiv").style.display="none";
+  document.getElementById("shoeDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="none";
+
+}
+
+function showpants() {
+  document.getElementById("shirtDiv").style.display="none";
+  document.getElementById("hatDiv").style.display="none";
+  document.getElementById("shoeDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="block";
+
+}
+
+function showhats() {
+  document.getElementById("hatDiv").style.display="block";
+  document.getElementById("shirtDiv").style.display="none";
+  document.getElementById("shoeDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="none";
+
+}
+
+function showshoes() {
+  document.getElementById("shoeDiv").style.display="block";
+  document.getElementById("shirtDiv").style.display="none";
+  document.getElementById("hatDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="none";
+
+}
+
+
+
+</script>
+
+</body>
+</html>

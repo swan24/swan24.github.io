@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown button:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the body dropdown menu.</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Body</button>
+  <div id="myDropdown" class="dropdown-content">
+    <button onclick="showskin()">Skin</button>
+    <button onclick="showhair()">Hair</button>
+    <button onclick="showeyes()">Eyes</button>
+    <button onclick="showmouths()">Mouths</button>
+
+  </div>
+</div>
+
+<div style="border: 5px solid blue; width:200px; height:400px; display:none;"  id="skinDiv">
+
+</div>
+
+<div style="border: 5px solid brown; width:200px; height:400px; display:none;"  id="hairDiv">
+  <img src="https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=97400559" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=85784573" alt="W3Schools.com" style="width:50px;height:50px;">
+
+</div>
+
+<div style="border: 5px solid green; width:200px; height:400px; display:none;"  id="eyeDiv">
+  <img src="http://designingflicks.com/images/whiteeye-clipart-9.png" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="http://designingflicks.com/images/white-eyes-clipart-1.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+
+</div>
+
+<div style="border: 5px solid red; width:200px; height:400px; display:none;"  id="mouthDiv">
+  <img src="http://cliparting.com/wp-content/uploads/2016/12/Mouth-clipart-clip-art-free-images.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+  <img src="https://cdn.pixabay.com/photo/2014/04/03/10/31/lips-310734_960_720.png" alt="W3Schools.com" style="width:50px;height:50px;">
+
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+
+      }
+    }
+  }
+}
+
+function showskin() {
+  document.getElementById("skinDiv").style.display="block";
+  document.getElementById("hairDiv").style.display="none";
+  document.getElementById("eyeDiv").style.display="none";
+  document.getElementById("mouthDiv").style.display="none";
+
+}
+
+function showhair() {
+  document.getElementById("skinDiv").style.display="none";
+  document.getElementById("eyeDiv").style.display="none";
+  document.getElementById("mouthDiv").style.display="none";
+  document.getElementById("hairDiv").style.display="block";
+
+}
+
+function showeyes() {
+  document.getElementById("eyeDiv").style.display="block";
+  document.getElementById("skinDiv").style.display="none";
+  document.getElementById("hairDiv").style.display="none";
+  document.getElementById("mouthDiv").style.display="none";
+
+}
+
+function showmouths() {
+  document.getElementById("mouthDiv").style.display="block";
+  document.getElementById("skinDiv").style.display="none";
+  document.getElementById("hairDiv").style.display="none";
+  document.getElementById("eyeDiv").style.display="none";
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Character Creator</title>
+</head>
+<style>
+
+body {
+				background-image: url("http://wonderworlds.org/images/raindrops/raindrops-window-bw-pale-tile.jpg");
+				/*background-image: url("http://www.commentnation.com/backgrounds/images/glitter_background_seamless_green_stars.gif");*/
+}
+
+img {
+}
+
+ul{
+	list-style-type: none;
+	display:inline-block;
+}
+
+h2 {
+    text-align: center;
+    font-family: verdana;
+    background-color: #6ce7f4;
+}
+
+.buttonL {
+    background-color: #f0c497;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonM {
+    background-color: #bd7e39;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonD {
+    background-color: #422915;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonB {
+    background-color: #92b8e2;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonG {
+    background-color: #66f805;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.base{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 0;
+}
+
+.baseT{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:visible;
+  z-index: -1;
+}
+
+.hair{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 7;
+}
+
+.eyes{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:visible;
+  z-index: 6;
+}
+
+.nose{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 5;
+}
+
+.mouth{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 4;
+}
+
+.hat{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 9;
+}
+
+.top{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 3;
+}
+
+.bottom{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 2;
+}
+
+.shoes{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 1;
+}
+
+.neck{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 8;
+}
+
+.waist{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 11;
+}
+
+.hand{
+	position: absolute;
+	margin-left: 4%;
+	margin-top: 0%;
+  display:block;
+  height:50%;
+	visibility:hidden;
+  z-index: 10;
+}
+
+.pbutton{
+	position: relative;
+  visibility: visible;
+  display:inline-block;
+  height:20%;
+}
+
+.dropbtnB:hover, .dropbtnB:focus {
+    background-color: #a0eff8;
+}
+.dropdownB {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-contentB {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-contentB button {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdownB button:hover {background-color: #f1f1f1}
+.showB {display:block;}
+
+.dropbtn {
+    background-color: #6ce7f4;
+    color: black;
+    padding: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #a0eff8;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content button {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown button:hover {background-color: #f1f1f1}
+.show {display:block;}
+
+table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+</style>
+
+
+<body>
+
+<h2>Character Creator</h2>
+
+
+<div id = "myDiv">
+	<h1> Name your character </h1>
+<input type "text" name= "baseinput" id="myText">
+  <input type= "button" value="submit" onclick="getTextInput()">
+	<div id = "myName">
+	</div>
+</div>
+
+
+<script>
+
+
+	function getTextInput(){
+	  var input = document.getElementById("myText").value;
+	  document.getElementById("myName").innerHTML = "<br />" + "<b>Hi, My name is </b> " + "<b>"+input+"</b>";
+	}
+
+</script>
+
+
+			<img src="face-dumb.png" alt="face-dumb" class="eyes" id="dumbface">
+
+			<img src="base-2-transparent.png" alt="base-2-transparent" class="baseT" id="pbt">
+			<img src="base-2-dark.png" alt="base-2-dark" class="base" id="pbd">
+			<img src="base-2-med1.png" alt="base-2-med1" class="base" id="pbm">
+			<img src="base-2-light.png" alt="base-2-light" class="base" id="pbl">
+			<img src="base-2-blue1.png" alt="base-2-blue1" class="base" id="pbb">
+			<img src="base-2-green1.png" alt="base-2-green1" class="base" id="pbg">
+
+			<img src="shirt-1-red.png" alt="shirt-1-red" class="top" id="pshirt1red">
+			<img src="shirt-1-blue.png" alt="shirt-1-blue" class="top" id="pshirt1blue">
+			<img src="shirt-1-yellow.png" alt="shirt-1-yellow" class="top" id="pshirt1yellow">
+
+			<img src="pants-1-darkgrey.png" alt="pants-1-darkgrey" class="bottom" id="ppants1dgrey">
+			<img src="pants-1-darkblue.png" alt="pants-1-darkblue" class="bottom" id="ppants1dblue">
+
+			<img src="shoes-1-blue.png" alt="shoes-1-blue" class="shoes" id="pshoes1blue">
+			<img src="shoes-1-green.png" alt="shoes-1-green" class="shoes" id="pshoes1green">
+			<img src="shoes-1-grey.png" alt="shoes-1-grey" class="shoes" id="pshoes1grey">
+
+	<div style = "margin-left: 26%; margin-top: 6%; width: 211px; display: inline-block; position: absolute;">
+        <!-- body-dropdown-here: base(buttons here) hair eyes nose mouth
+
+		    <br> <br> <br> <br> <br> <br> clothes-dropdown-here: hat neck top hands waist bottom shoes <br> -->
+
+
+				<div class="dropdownB">
+				<button onclick="myFunctionB()" class="dropbtn">Body</button>
+				  <div id="myDropdownB" class="dropdown-content">
+				    <button onclick="showskin()">Skin</button>
+				    <button onclick="showhair()">Hair</button>
+				    <button onclick="showeyes()">Eyes</button>
+				    <button onclick="showmouths()">Mouths</button>
+
+				  </div>
+				</div>
+
+	      <div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:block;"  id="adiv0">
+				</div>
+	      <div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="skinDiv">
+					<button name = "SB" id = "b1" onclick="baseButtonf1()" type="button" class="buttonL">Light</button>
+					<button name = "SB" id = "b2" onclick="baseButtonf2()" type="button" class="buttonM">Medium</button>
+					<button name = "SB" id = "b3" onclick="baseButtonf3()" type="button" class="buttonD">Dark</button>
+					<button name = "SB" id = "b4" onclick="baseButtonf4()" type="button" class="buttonB">Blue</button>
+					<button name = "SB" id = "b5" onclick="baseButtonf5()" type="button" class="buttonG">Green</button>
+				</div>
+
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="hairDiv">
+				  <img src="https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=97400559" alt="W3Schools.com" style="width:50px;height:50px;">
+				  <img src="https://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=85784573" alt="W3Schools.com" style="width:50px;height:50px;">
+
+				</div>
+
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="eyeDiv">
+				  <img src="http://designingflicks.com/images/whiteeye-clipart-9.png" alt="W3Schools.com" style="width:50px;height:50px;">
+				  <img src="http://designingflicks.com/images/white-eyes-clipart-1.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+
+				</div>
+
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="mouthDiv">
+				  <img src="http://cliparting.com/wp-content/uploads/2016/12/Mouth-clipart-clip-art-free-images.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+				  <img src="https://cdn.pixabay.com/photo/2014/04/03/10/31/lips-310734_960_720.png" alt="W3Schools.com" style="width:50px;height:50px;">
+
+				</div>
+</div>
+<div style = "margin-left: 44%; margin-top: 6%; width: 211px; display: inline-block; position: absolute;">
+				<div class="dropdown">
+				<button onclick="myFunction()" class="dropbtn">Clothes</button>
+				  <div id="myDropdown" class="dropdown-content">
+				    <button onclick="showshirts()">Shirts</button>
+				    <button onclick="showpants()">Pants</button>
+				    <button onclick="showhats()">Hats</button>
+				    <button onclick="showshoes()">Shoes</button>
+
+				  </div>
+				</div>
+        <div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:block;"  id="adiv1">
+				</div>
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="shirtDiv">
+								<img src="shirt-1-red-cropped.png" alt="shirt-1-red-button" class="pbutton" id="bshirt1red" onclick="topButtonf1()">
+								<img src="shirt-1-blue-cropped.png" alt="shirt-1-blue-button" class="pbutton" id="bshirt1blue" onclick="topButtonf2()">
+								<img src="shirt-1-yellow-cropped.png" alt="shirt-1-yellow-button" class="pbutton" id="bshirt1yellow" onclick="topButtonf3()">
+
+				</div>
+
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="pantDiv">
+								<img src="pants-1-darkgrey-cropped.png" alt="pants-1-darkgrey-button" class="pbutton" id="bpants1dgrey" onclick="bottomButtonf1()">
+								<img src="pants-1-darkblue-cropped.png" alt="pants-1-darkblue-button" class="pbutton" id="bpants1dblue" onclick="bottomButtonf2()">
+
+				</div>
+
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="hatDiv">
+				  <img src="http://www.villagehatshop.com/photos/product/standard/4511390S171094/all/panama-straw-c-crown-fedora-hat.jpg" alt="W3Schools.com" style="width:50px;height:50px;">
+				  <img src="https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_2659000/ff_2659871_full.jpg&w=340" alt="W3Schools.com" style="width:50px;height:50px;">
+
+				</div>
+
+				<div style="border: 5px solid #aaaaaa; width:200px; height:400px; display:none;"  id="shoeDiv">
+							<img src="shoes-1-blue-cropped.png" alt="shoes-1-blue-button" class="pbutton" id="bshoes1blue" onclick="shoesButtonf1()">
+							<img src="shoes-1-green-cropped.png" alt="shoes-1-green-button" class="pbutton" id="bshoes1green" onclick="shoesButtonf2()">
+							<img src="shoes-1-grey-cropped.png" alt="shoes-1-grey-button" class="pbutton" id="bshoes1grey" onclick="shoesButtonf3()">
+
+				</div>
+	</div>
+  <div style = "border: 5px solid #6ce7f4; margin-left: 62%; margin-top: 11%; width: 211px; height:400px; display: inline-block; position: absolute;">
+    <div style = "border: 5px solid transparent; font-family: verdana; display: inline-block; position: absolute;">
+			<span style="color: #222222; font-size: 22px;"><b>Click on one of the dropdown menus and choose a category. Then click on one of the options and customize the character!</b></span>
+	  </div>
+	</div>
+
+<!-- <div style = "border: 3px solid green; margin-left: 26%; 	margin-top: 6%;"> -->
+
+
+<!--
+  <div id = "dd">
+      <input type="button" value="Submit" name = "SB" id = "b1" onclick="getInput()">
+      <input type="button" value="Submit2" name = "SB" id = "b2" onclick="getInput2()">
+    <br/>
+  </div> -->
+
+
+<script type="text/javascript">
+
+var baseA = ["pbd", "pbm", "pbl", "pbb", "pbg"];
+var topA = ["pshirt1red", "pshirt1blue", "pshirt1yellow"];
+var bottomA = ["ppants1dgrey", "ppants1dblue"];
+var shoesA = ["pshoes1blue", "pshoes1green", "pshoes1grey"];
+
+function dosomething(){
+  alert("it worked");
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunctionB() {
+    document.getElementById("myDropdownB").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdownsB = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdownsB.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdownB.classList.contains('show')) {
+        openDropdownB.classList.remove('show');
+      }
+    }
+  }
+}
+function showskin() {
+  document.getElementById("skinDiv").style.display="block";
+  document.getElementById("hairDiv").style.display="none";
+  document.getElementById("eyeDiv").style.display="none";
+  document.getElementById("mouthDiv").style.display="none";
+  document.getElementById("adiv0").style.display="none";
+}
+function showhair() {
+  document.getElementById("skinDiv").style.display="none";
+  document.getElementById("eyeDiv").style.display="none";
+  document.getElementById("mouthDiv").style.display="none";
+  document.getElementById("hairDiv").style.display="block";
+  document.getElementById("adiv0").style.display="none";
+}
+function showeyes() {
+  document.getElementById("eyeDiv").style.display="block";
+  document.getElementById("skinDiv").style.display="none";
+  document.getElementById("hairDiv").style.display="none";
+  document.getElementById("mouthDiv").style.display="none";
+  document.getElementById("adiv0").style.display="none";
+}
+function showmouths() {
+  document.getElementById("mouthDiv").style.display="block";
+  document.getElementById("skinDiv").style.display="none";
+  document.getElementById("hairDiv").style.display="none";
+  document.getElementById("eyeDiv").style.display="none";
+  document.getElementById("adiv0").style.display="none";
+}
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function showshirts() {
+  document.getElementById("shirtDiv").style.display="block";
+  document.getElementById("hatDiv").style.display="none";
+  document.getElementById("shoeDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="none";
+  document.getElementById("adiv1").style.display="none";
+}
+function showpants() {
+  document.getElementById("shirtDiv").style.display="none";
+  document.getElementById("hatDiv").style.display="none";
+  document.getElementById("shoeDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="block";
+  document.getElementById("adiv1").style.display="none";
+}
+function showhats() {
+  document.getElementById("hatDiv").style.display="block";
+  document.getElementById("shirtDiv").style.display="none";
+  document.getElementById("shoeDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="none";
+  document.getElementById("adiv1").style.display="none";
+}
+function showshoes() {
+  document.getElementById("shoeDiv").style.display="block";
+  document.getElementById("shirtDiv").style.display="none";
+  document.getElementById("hatDiv").style.display="none";
+  document.getElementById("pantDiv").style.display="none";
+  document.getElementById("adiv1").style.display="none";
+}
+
+function buttonF(varA,show){
+	for (var i = 0; i < varA.length; i += 1){
+		document.getElementById(varA[i]).style.visibility = "hidden";
+	}
+  document.getElementById(varA[show]).style.visibility = "visible";
+}
+
+function baseButtonf1(){
+	buttonF(baseA,2);
+}
+
+function baseButtonf2(){
+	buttonF(baseA,1);
+}
+
+function baseButtonf3(){
+	buttonF(baseA,0);
+}
+
+function baseButtonf4(){
+	buttonF(baseA,3);
+}
+
+function baseButtonf5(){
+	buttonF(baseA,4);
+}
+
+function topButtonf1(){
+	buttonF(topA,0);
+}
+
+function topButtonf2(){
+	buttonF(topA,1);
+}
+
+function topButtonf3(){
+	buttonF(topA,2);
+}
+
+function bottomButtonf1(){
+	buttonF(bottomA,0);
+}
+
+function bottomButtonf2(){
+	buttonF(bottomA,1);
+}
+
+function shoesButtonf1(){
+	buttonF(shoesA,0);
+}
+
+function shoesButtonf2(){
+	buttonF(shoesA,1);
+}
+
+function shoesButtonf3(){
+	buttonF(shoesA,2);
+}
+
+
+
+
+// $(document).ready(function(){
+//
+// function ImageSwitcher(choices, i) {
+// 	i = 0;
+//
+// 	this.Next = function() {
+// 		hide_current_image();
+// 		show_next_image();
+// 	}
+//
+// 	var hide_current_image = function() {
+// 		if(choices){
+// 			choices[i].style.visibility = "hidden";
+// 			i += 1;
+// 		}
+// 	}
+// 	var show_next_image = function() {
+// 		if(choices){
+// 			if(i == (choices.length)) {
+// 				i = 0;
+// 			}
+// 			choices[i].style.visibility = "visible";
+// 		}
+// 	}
+// }
+//
+//     var pants = $(".base");
+// 	var shirts = $(".shoes");
+// 	var backgrounds = $(".bg");
+//
+// 	var shirt_picker = new ImageSwitcher(shirts);
+// 	document.getElementById("shirt_button").onclick = function() { shirt_picker.Next(); };
+//
+// 	var pants_picker = new ImageSwitcher(pants);
+// 	document.getElementById("pant_button").onclick = function() {pants_picker.Next(); };
+//
+// 	var bg_picker = new ImageSwitcher(backgrounds);
+// 	document.getElementById("bg_button").onclick = function() {bg_picker.Next(); };
+//
+// });
+//
+//   $("#shirt_button").click(function(){
+//   $("#shirt-menu").css("visibility", "visible"); });
+
+
+
+
+
+</script>
+
+</body>
+</html>
