@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personality Quiz</title>
+
+</head>
+
+<body style="background-color:blue">
+<h1 style="color:red;">Personality Quiz</h1>
+
+<div id = "myDiv">
+ <p1 style="color:black;">What is your favorite animal?</p1>
+
+ <br/ >
+
+ <input type="radio" name="animal" id="animal1"> Dog
+ <input type="radio" name="animal" id="animal2"> Cat
+ <input type="radio" name="animal" id="animal3"> Fish
+
+ <br/ >
+
+ <br/ >
+
+  <p2 style="color;black;">What subject you like the most?</p2>
+
+  <br/ >
+
+  <input type="radio" name="subject" id="subject1"> Science
+  <input type="radio" name="subject" id="subject2"> Math
+  <input type="radio" name="subject" id="subject3"> English
+
+  <br/ >
+
+
+
+  <br />
+
+  <p3 style="color;black;">What is your favorite color?</p3>
+
+  <br/ >
+
+  <input type="radio" name="color" id="color1"> Red
+  <input type="radio" name="color" id="color2"> Blue
+  <input type="radio" name="color" id="color3"> Black
+
+  <br/ >
+
+
+  <br/ >
+
+  <p4 style="color:black;">What is your favorite sport?
+
+  <br/ >
+
+  <input type="radio" name="sport" id="sport1"> Basketball
+  <input type="radio" name="sport" id="sport2"> Swimming
+  <input type="radio" name="sport" id="sport3"> Badminton
+
+  <br/ >
+
+
+
+  <br/ >
+
+  <p5 style="color:black;">What is your favorite song?
+
+  <br/ >
+
+  <input type="radio" name="song" id="song1"> Despacito
+  <input type="radio" name="song" id="song2"> See you again
+  <input type="radio" name="song" id="song3"> Closer
+
+  <br/ >
+
+<input type="button" value="submit" onclick=getPersonality()>
+<div id="div2"></div>
+
+  <br/ >
+  <br/ >
+
+  <div/>
+    <script type="text/javascript">
+     function getPersonality(){
+
+       var typeOneScore = 0;
+       var typeTwoScore = 0;
+       var typeThreeScore = 0;
+       var typeFourScore = 0;
+       var typeFiveScore = 0;
+
+      if(document.getElementById("animal1").checked){
+        typeOneScore += 1;
+      }
+      else if (document.getElementById("animal2").checked){
+      typeTwoScore += 1;
+    }
+    else if (document.getElementById("animal3").checked){
+      typeThreeScore += 1;
+    }
+
+
+    if(document.getElementById("subject1").checked){
+      typeOneScore += 1;
+    }
+    else if (document.getElementById("subject2").checked){
+    typeTwoScore += 1;
+  }
+  else if (document.getElementById("subject3").checked){
+    typeThreeScore += 1;
+  }
+
+  if(document.getElementById("color1").checked){
+    typeOneScore += 1;
+  }
+  else if (document.getElementById("color2").checked){
+  typeTwoScore += 1;
+  }
+  else if (document.getElementById("color3").checked){
+  typeThreeScore += 1;
+  }
+  if(document.getElementById("sport1").checked){
+  typeOneScore += 1;
+  }
+  else if (document.getElementById("sport2").checked){
+  typeTwoScore += 1;
+  }
+  else if (document.getElementById("sport3").checked){
+  typeThreeScore += 1;
+  }
+  if(document.getElementById("song1").checked){
+  typeOneScore += 1;
+  }
+  else if (document.getElementById("song2").checked){
+  typeTwoScore += 1;
+  }
+  else if (document.getElementById("song3").checked){
+  typeThreeScore += 1;
+}
+
+
+    if(typeOneScore > typeTwoScore && typeOneScore > typeThreeScore && typeOneScore > typeFourScore && typeOneScore > typeFiveScore){
+      document.getElementById("div2").innerHTML = "Your personality is type 1!";
+    }
+    else if (typeTwoScore > typeOneScore && typeTwoScore > typeThreeScore && typeTwoScore > typeFourScore && typeTwoScore > typeFiveScore) {
+      document.getElementById("div2").innerHTML = "Your personality is type 2!";
+   }
+   else if (typeThreeScore > typeOneScore && typeThreeScore > typeTwoScore && typeThreeScore > typeFourScore && typeThreeScore > typeFiveScore){
+       document.getElementById("div2").innerHTML = "Your personality is type 3!";
+  }
+  else if (typeFourScore > typeOneScore && typeFourScore > typeTwoScore && typeFourScore > typeThreeScore && typeFourScore > typeFiveScore){
+      document.getElementById("div2").innerHTML = "Your personality is type 4!";
+ }
+ else{
+     document.getElementById("div2").innerHTML = "Your personality is type 5!";
+ }
+}
+
+  </script>
+
+  </body>
+
+
+  </html>
