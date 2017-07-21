@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops</title>
+</head>
+<body style="background-color:red">
+
+
+<input type="text" id="myText">
+<input type="button" value="submit" onclick=CapA()>
+<p id="sample"></p>
+
+
+<script type="text/javascript">
+
+    function CapA(){
+      var inString = document.getElementById("myText").value;
+      var outString="";
+
+        for (var i=0; i<inString.length; i+=1){
+             if (inString.charAt(i)=="a"){
+                  outString +="ub"+"a";
+             }
+             else if (inString.charAt(i)=="o"){
+               outString +="ub"+"o";
+             }
+             else if (inString.charAt(i)=="e"){
+              outString +="ub"+"e";
+            }
+            else if (inString.charAt(i)=="i"){
+             outString +="ub"+"i";
+           }
+           else if (inString.charAt(i)=="u"){
+            outString +="ub"+"u";
+          }
+             else{
+                 outString += inString.charAt(i);
+             }
+      }
+      document.getElementById("sample").innerHTML =outString;
+      return outString;
+  }
+
+
+
+
+</script>
+
+</body>
+</html>
